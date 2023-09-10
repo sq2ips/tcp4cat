@@ -37,7 +37,7 @@ class Pro:
                     try:
                         data = connection.recv(16)
                         if data == '': break
-                        ser.write(data)
+                        self.ser.write(data)
                     except KeyboardInterrupt:
                         connection.close()
                         sys.exit()
