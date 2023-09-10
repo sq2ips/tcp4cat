@@ -31,7 +31,7 @@ class Pro:
             self.log.info('waiting for a connection')
             connection, client_address = self.sock.accept()
             try:
-                self.log.info('connection from' + client_address + " on connection " + self.name)
+                self.log.info('connection from' + str(client_address) + " on connection" + self.name)
                 connection.settimeout(0.1)
                 while True:
                     try:
