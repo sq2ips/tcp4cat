@@ -28,7 +28,7 @@ class Pro:
         self.log.info("Starting main loop for: {}".format(self.name))
         while True:
 
-            print('waiting for a connection')
+            self.log.info('waiting for a connection')
             connection, client_address = self.sock.accept()
             try:
                 print('connection from', client_address)
