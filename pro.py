@@ -20,12 +20,12 @@ class Pro:
         self.sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         self.sock.setsockopt(socket.SOL_SOCKET, socket.SO_KEEPALIVE, 1)
         server_address = (self.ip, self.port)
-        self.log.info('starting up on ip \'{}\' port {}), '.format(*server_address)+"name: {}".format(self.name))
+        self.log.info('starting up on ip \'{}\' port {}, '.format(*server_address)+"name: {}".format(self.name))
         self.sock.bind(server_address)
         self.sock.listen(1)
         self.log.info("Succesfully started.")
     def loop(self):
-        self.log.info("")
+        self.log.info("Starting main loop for: {}".format(self.name))
         while True:
 
             print('waiting for a connection')
