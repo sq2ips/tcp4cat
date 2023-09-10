@@ -43,7 +43,7 @@ class Pro:
                         sys.exit()
                     except Exception as e:
                         pass
-                    received_data = self.er.read(self.ser.inWaiting())
+                    received_data = self.ser.read(self.ser.inWaiting())
                     connection.sendall(received_data)
             except Exception as e:
                 print(e)
