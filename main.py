@@ -1,12 +1,15 @@
 from multiprocessing import Process
 from pro import Pro
+from datetime import datetime
 
 import config as cfg
 devices=cfg.devices
 
 import coloredlogs, logging
+now=datetime.now().strftime("tcp4cat.log")
+logging.basicConfig(filename="log.txt", level=logging.DEBUG)
 logger = logging.getLogger(__name__)
-coloredlogs.install(level='DEBUG')
+coloredlogs.install(level='DEBUG',filename='example.log')
 
 p=[]
 obj=[]
