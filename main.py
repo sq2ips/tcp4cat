@@ -1,6 +1,9 @@
 from multiprocessing import Process
 from pro import Pro
 
+import config as cfg
+devices=cfg.devices
+
 import coloredlogs, logging
 logger = logging.getLogger(__name__)
 coloredlogs.install(level='DEBUG')
@@ -8,8 +11,8 @@ coloredlogs.install(level='DEBUG')
 p=[]
 obj=[]
 
-obj.append(Pro(logger, 8888, '', '/dev/pts/1', 115200, "cat"))
-obj.append(Pro(logger, 8889, '', '/dev/pts/5', 115200, "rot"))
+for i in range(len(devices)):
+    obj.append(Pro(logger, devices[i][0], devices[i][1], devices[i][2], devices[i][3], devices[i][4]))
 
 for i in range(len(obj)):
     try:
@@ -24,11 +27,3 @@ for i in range(len(p)):
     p[i].start()
 for i in range(len(p)):
     p[i].join()
-
-#print("x")
-#pro.append(Process(target=r.start))
-#print("y")
-#pro[0].start()
-#print("z")
-#pro[0].join()
-#print("i")
