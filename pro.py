@@ -42,7 +42,7 @@ class Pro:
                         if data == '': break
                         self.ser.write(data)
                     except Exception as e:
-                        self.logger.warning(e)
+                        pass
                     received_data = self.ser.read(self.ser.inWaiting())
                     connection.sendall(received_data)
             except Exception as e:

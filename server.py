@@ -1,6 +1,7 @@
 from multiprocessing import Process
 from pro import Pro
 from datetime import datetime
+import sys
 
 import config as cfg
 devices=cfg.devices
@@ -30,3 +31,4 @@ for i in range(len(p)):
     p[i].start()
 for i in range(len(p)):
     p[i].join()
+sys.exit(1)
