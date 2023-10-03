@@ -10,7 +10,7 @@ import coloredlogs, logging
 now=datetime.now().strftime("tcp4cat.log")
 logging.basicConfig(filename="log.txt", level=logging.DEBUG)
 logger = logging.getLogger(__name__)
-coloredlogs.install(level='DEBUG',filename='example.log')
+coloredlogs.install(level='DEBUG')
 
 p=[]
 obj=[]

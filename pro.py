@@ -51,3 +51,11 @@ class Pro:
             finally:
                 #clean up connection
                 connection.close()
+class RPro:
+    def __init__(self, logger, port, ip, device, baud, name):
+        self.port=port
+        self.ip=ip
+        self.device=device
+        self.baud=baud
+        self.logger=logger
+        self.name=name
